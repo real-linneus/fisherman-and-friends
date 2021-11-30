@@ -1,6 +1,13 @@
 %% Run program
+clear all; close all; clc;
 
-InitializeSimulation
+InitializeSimulation;
+InitializeFigure;
 
-agents = UpdateAgentsPosition(agents,environment);
+for i = 1:7
+    fprintf("%g\n",i)
+    pause(0.5)
+    agents = UpdateAgentsPosition(agents,environment);
+    UpdateFigure;
+end
 
