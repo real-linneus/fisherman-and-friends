@@ -1,0 +1,21 @@
+% Should initialize all entities and there properties as well as the
+% evironment that they "live" in.
+
+environment = struct;
+environment.lakeSize = 10;
+environment.lakeSize = 10;
+
+
+
+agents = struct;
+agents.name = "Fish 1";
+agents.type = "Fish";
+agents.x = 0;
+agents.y = 0;
+agents.angle = 0;
+agents.velocity = 1;
+agents.poulation = 1000;
+agents.interactionRadius = 1;
+agents.radius = sqrt(agents.poulation);
+
+
