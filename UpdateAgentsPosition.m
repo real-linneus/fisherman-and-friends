@@ -1,7 +1,9 @@
 function agents = UpdateAgentsPosition(agents,environment)
     
-    [agents.x] = [agents.x] + [agents.velocity].*cos([agents.angle]).*[environment.dt];
-    [agents.y] = [agents.y] + [agents.velocity].*sin([agents.angle]).*[environment.dt];
+    for j = 1:length(agents)
+        agents(j).x = agents(j).x + agents(j).velocity.*cos(agents(j).angle).*environment.dt;
+        agents(j).y = agents(j).y + agents(j).velocity.*sin(agents(j).angle).*environment.dt;
+    end
     
 %     agents([agents.x]<-environment.lakeSize/2).x = -environment.lakeSize/2;
 %     agents([agents.x]>environment.lakeSize/2).x = environment.lakeSize/2;
