@@ -4,8 +4,8 @@
 environment = struct;
 environment.lakeSize = 10;
 environment.t = 0;
-environment.dt = 1;
-
+environment.dt = 0.1;
+environment.angularNoise = 0.5; 
 
 
 
@@ -25,10 +25,21 @@ agents(2).name = "Fish 2";
 agents(2).type = "Fish";
 agents(2).x = 3;
 agents(2).y = 2;
-agents(2).angle = pi;
+agents(2).angle = 2*pi/3;
 agents(2).velocity = 1;
 agents(2).poulation = 5000;
 agents(2).interactionRadius = 1;
 agents(2).radius = sqrt(agents(1).poulation);
 agents(2).plotColor = 2;
+
+agents(3).name = "Fish 2";
+agents(3).type = "Fish";
+agents(3).x = -2;
+agents(3).y = -4;
+agents(3).angle = pi/3;
+agents(3).velocity = 1;
+agents(3).poulation = 5000;
+agents(3).interactionRadius = 1;
+agents(3).radius = sqrt(agents(1).poulation);
+agents(3).plotColor = 3;
 
