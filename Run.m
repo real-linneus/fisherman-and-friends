@@ -9,6 +9,7 @@ for i = 1:200
 %     pause(0.05)
     agents = UpdateAgentsPosition(agents,environment);
     agents = UpdateAgentsAngle(agents,environment);
+    agents = UpdateAgentsVelocity(agents);
     UpdateFigure;
 end
 
