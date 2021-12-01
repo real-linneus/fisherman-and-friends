@@ -5,7 +5,7 @@ environment = struct;
 environment.lakeSize = 10;
 environment.t = 0;
 environment.dt = 0.05;
-environment.angularNoise = 0.8; 
+environment.angularNoise = 2; 
 
 
 
@@ -24,21 +24,21 @@ agents(1).interactionRadius = 0.2;
 agents(1).radius = sqrt(agents(1).poulation);
 agents(1).plotColor = 1;
 
-agents(2).name = "Fish 3";
+agents(2).name = "Fish 2";
 agents(2).type = "Fish";
 agents(2).x = 3;
 agents(2).y = 2;
 agents(2).angle = 2*pi/3;
 agents(2).velocity = 0.5;
 agents(2).minVel = 0.5;
-agents(2).maxVel = 4;
+agents(2).maxVel = 3;
 agents(2).timestepsSinceHunted = inf;
 agents(2).poulation = 5000;
 agents(2).interactionRadius = 0.2;
 agents(2).radius = sqrt(agents(2).poulation);
 agents(2).plotColor = 2;
 
-agents(3).name = "Fish 2";
+agents(3).name = "Fish 3";
 agents(3).type = "Fish";
 agents(3).x = -2;
 agents(3).y = -4;

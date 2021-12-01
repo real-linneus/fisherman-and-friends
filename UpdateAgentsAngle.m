@@ -14,6 +14,9 @@ function agents = UpdateAgentsAngle(agents,environment)
         if abs(agents(j).y) == half
         agents(j).angle = -agents(j).angle;
         end
+        
+        %Randomness
+        agents(j).angle = agents(j).angle + sqrt(2*eta)*timestep*randn;
 
         %Interaction
         interactingParticles = distanceMatrix(j,:) < agents(j).interactionRadius;
@@ -28,8 +31,6 @@ function agents = UpdateAgentsAngle(agents,environment)
             end
         end
         
-        %Randomness
-        agents(j).angle = agents(j).angle + sqrt(2*eta)*timestep*randn;
     end
     
 end
