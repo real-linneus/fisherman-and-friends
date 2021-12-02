@@ -22,10 +22,14 @@ function agents = UpdateAgentsAngle(agents,environment)
         interactingParticles = distanceMatrix(j,:) < agents(j).interactionRadius;
         for k = agentIndex(agentIndex~=j)
             if interactingParticles(k)
-                if agents(j).type == "Fisherman" 
+                if agents(j).type == "Fisherman" && agents(k).type ~= "Fisherman"
                 	agents(j).angle = atan2(agents(k).y-agents(j).y,agents(k).x-agents(j).x);
                 else
-                    agents(j).timestepsSinceHunted = 0;
+                    if agents(k).type == "Fisherman"
+                        agents(j).timestepsSinceHunted = 0;
+                    else
+                        agents(j).timestepsSinceHunted = 30;
+                    end
                     agents(j).angle = atan2(agents(j).y-agents(k).y,agents(j).x-agents(k).x);
                 end
             end
