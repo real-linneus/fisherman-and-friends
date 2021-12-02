@@ -1,4 +1,4 @@
-function agents = UpdateAgentsPopulation(agents)
+function agents = UpdateAgentsPopulation(agents,environment)
     
     distanceMatrix = squareform(pdist([[agents.x]',[agents.y]']));
     agentIndex = 1:length(agents);
@@ -7,9 +7,9 @@ function agents = UpdateAgentsPopulation(agents)
 
         fishPerCatch = ceil(100*rand);
         minFishPopulation = 500;
-        maxFishPopulation = 500e3;
+        maxFishPopulation = agents(j).maxFishPopulation;
         catchRadius = 0.2;
-        growthRate = 1.0001;
+        growthRate = 1.01;
         fishermanStorage = 4000;
         
         %Interaction
@@ -27,8 +27,11 @@ function agents = UpdateAgentsPopulation(agents)
                     end
                 end
             end
-        elseif agents(j).type == "Fish" && agents(j).population <= maxFishPopulation-(growthRate-1)*agents(j).population
-            agents(j).population = ceil(growthRate * agents(j).population);
+        else
+            if agents(j).population <= maxFishPopulation-(growthRate-1)*agents(j).population
+                agents(j).population = ceil(growthRate * agents(j).population);
+            end
+            agents(j).radius = sqrt(agents(j).population/maxFishPopulation);
         end
         
     end

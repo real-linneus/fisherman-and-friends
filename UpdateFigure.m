@@ -1,7 +1,10 @@
+scaleFactor = get(gca,'Position');
+scaleFactor = scaleFactor(4)/environment.lakeSize;
 for i = 1:length(agents)
     environment.scatter(i).XData = agents(i).x;
     environment.scatter(i).YData = agents(i).y;
-    environment.scatter(i).SizeData = agents(i).radius;
+    s = (2*scaleFactor*agents(i).radius)^2;
+    environment.scatter(i).SizeData = s;
 end
 environment.quiver.XData = [agents.x];
 environment.quiver.YData = [agents.y];

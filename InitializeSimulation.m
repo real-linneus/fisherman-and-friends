@@ -5,7 +5,7 @@ environment = struct;
 environment.lakeSize = 10;
 environment.t = 0;
 environment.dt = 0.05;
-environment.angularNoise = 2; 
+environment.angularNoise = 2;
 
 agents = struct;
 
@@ -20,7 +20,7 @@ agents(1).maxVel = 1;
 agents(1).timestepsSinceHunted = inf;
 agents(1).population = 1;
 agents(1).interactionRadius = 1;
-agents(1).radius = sqrt(agents(1).population);
+agents(1).radius = 0.2;
 agents(1).plotColor = 1;
 
 agents(2).name = "Fisherman 2";
@@ -34,12 +34,13 @@ agents(2).maxVel = 1;
 agents(2).timestepsSinceHunted = inf;
 agents(2).population = 1;
 agents(2).interactionRadius = 1;
-agents(2).radius = sqrt(agents(2).population);
+agents(2).radius = 0.2;
 agents(2).plotColor = 2;
 
 
 agents(3).name = "Fish 1";
 agents(3).type = "Fish";
+agents(3).maxFishPopulation = 5000;
 agents(3).x = -3;
 agents(3).y = -2;
 agents(3).angle = 0;
@@ -49,11 +50,12 @@ agents(3).maxVel = 4;
 agents(3).timestepsSinceHunted = inf;
 agents(3).population = 1000;
 agents(3).interactionRadius = 0.2;
-agents(3).radius = sqrt(agents(3).population);
+agents(3).radius = sqrt(agents(3).population/agents(3).maxFishPopulation);
 agents(3).plotColor = 3;
 
 agents(4).name = "Fish 2";
 agents(4).type = "Fish";
+agents(4).maxFishPopulation = 5000;
 agents(4).x = 3;
 agents(4).y = 2;
 agents(4).angle = 2*pi/3;
@@ -63,7 +65,7 @@ agents(4).maxVel = 3;
 agents(4).timestepsSinceHunted = inf;
 agents(4).population = 5000;
 agents(4).interactionRadius = 0.2;
-agents(4).radius = sqrt(agents(4).population);
+agents(4).radius = sqrt(agents(4).population/agents(4).maxFishPopulation);
 agents(4).plotColor = 4;
 
 % agents(5).name = "Fish 3";
