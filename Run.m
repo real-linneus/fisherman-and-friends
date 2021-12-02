@@ -5,13 +5,13 @@ clear all; close all; clc;
 InitializeSimulation;
 InitializeFigure;
 
-for i = 1:200
+for i = 1:1000
     fprintf("%g\n",i)
 %     pause(0.05)
     agents = UpdateAgentsPosition(agents,environment);
     agents = UpdateAgentsPopulation(agents);
     agents = UpdateAgentsAngle(agents,environment);
     agents = UpdateAgentsVelocity(agents);
-    UpdateFigure;
+    %UpdateFigure;
 end
-
+UpdateFigure
