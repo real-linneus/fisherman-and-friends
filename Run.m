@@ -1,5 +1,6 @@
 %% Run program
 clear all; close all; clc;
+% set(0,'defaultFigureWindowStyle','docked')
 
 InitializeSimulation;
 InitializeFigure;
