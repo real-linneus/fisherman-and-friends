@@ -9,6 +9,7 @@ for i = 1:200
     fprintf("%g\n",i)
 %     pause(0.05)
     agents = UpdateAgentsPosition(agents,environment);
+    agents = UpdateAgentsPopulation(agents);
     agents = UpdateAgentsAngle(agents,environment);
     agents = UpdateAgentsVelocity(agents);
     UpdateFigure;
