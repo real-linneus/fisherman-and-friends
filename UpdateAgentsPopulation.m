@@ -7,6 +7,7 @@ function agents = UpdateAgentsPopulation(agents)
 
         fishPerCatch = ceil(100*rand);
         minFishPopulation = 500;
+        maxFishPopulation = 500e3;
         catchRadius = 0.2;
         growthRate = 1.0001;
         fishermanStorage = 4000;
@@ -17,7 +18,7 @@ function agents = UpdateAgentsPopulation(agents)
             for k = agentIndex(agentIndex~=j)
                 if interactingParticles(k)
                     if agents(k).type == "Fish" 
-                        if agents(k).population > minFishPopulation && agents(j).population < fishermanStorage-fishPerCatch+1
+                        if agents(k).population >= minFishPopulation+fishPerCatch && agents(j).population <= fishermanStorage-fishPerCatch
                             agents(k).population = agents(k).population - fishPerCatch;
                             fprintf("%s's population reduced to %d \n",agents(k).name,agents(k).population)
                             agents(j).population = agents(j).population + fishPerCatch;
@@ -26,7 +27,7 @@ function agents = UpdateAgentsPopulation(agents)
                     end
                 end
             end
-        elseif agents(j).type == "Fish"
+        elseif agents(j).type == "Fish" && agents(j).population <= maxFishPopulation-(growthRate-1)*agents(j).population
             agents(j).population = ceil(growthRate * agents(j).population);
         end
         
