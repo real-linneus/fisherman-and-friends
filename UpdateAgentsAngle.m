@@ -8,11 +8,11 @@ function agents = UpdateAgentsAngle(agents,environment)
     half = environment.lakeSize/2;
     for j = agentIndex
         %Bounce with walls
-        if abs(agents(j).x) == half
+        if abs(agents(j).x)+agents(j).radius >= half
             agents(j).angle = pi - agents(j).angle;
         end
-        if abs(agents(j).y) == half
-        agents(j).angle = -agents(j).angle;
+        if abs(agents(j).y)+agents(j).radius >= half
+            agents(j).angle = -agents(j).angle;
         end
         
         %Randomness
