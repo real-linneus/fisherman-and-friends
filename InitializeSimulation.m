@@ -49,7 +49,7 @@ agents(3).minVel = 0.5;
 agents(3).maxVel = 4;
 agents(3).timestepsSinceHunted = inf;
 agents(3).population = 1000;
-agents(3).interactionRadius = -0.5;
+agents(3).interactionRadius = -0.2;
 agents(3).radius = sqrt(agents(3).population/agents(3).maxFishPopulation);
 agents(3).plotColor = 3;
 
@@ -64,7 +64,7 @@ agents(4).minVel = 0.5;
 agents(4).maxVel = 3;
 agents(4).timestepsSinceHunted = inf;
 agents(4).population = 5000;
-agents(4).interactionRadius = -0.5;
+agents(4).interactionRadius = -0.2;
 agents(4).radius = sqrt(agents(4).population/agents(4).maxFishPopulation);
 agents(4).plotColor = 4;
 
@@ -79,7 +79,7 @@ agents(5).minVel = 0.5;
 agents(5).maxVel = 3;
 agents(5).timestepsSinceHunted = inf;
 agents(5).population = 5000;
-agents(5).interactionRadius = -0.5;
+agents(5).interactionRadius = -0.2;
 agents(5).radius = sqrt(agents(5).population/agents(5).maxFishPopulation/2);
 agents(5).plotColor = 5;
 
@@ -94,7 +94,7 @@ agents(6).minVel = 0.5;
 agents(6).maxVel = 3;
 agents(6).timestepsSinceHunted = inf;
 agents(6).population = 5000;
-agents(6).interactionRadius = -0.5;
+agents(6).interactionRadius = -0.2;
 agents(6).radius = sqrt(agents(6).population/agents(6).maxFishPopulation/2);
 agents(6).plotColor = 6;
 

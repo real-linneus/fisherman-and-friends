@@ -1,6 +1,7 @@
 function agents = UpdateAgentsAngle(agents,environment)
     
-    distanceMatrix = squareform(pdist([[agents.x]',[agents.y]']));
+    radiusMatrix = meshgrid([agents.radius])+meshgrid([agents.radius])';
+    distanceMatrix = squareform(pdist([[agents.x]',[agents.y]'])) - radiusMatrix;
     agentIndex = 1:length(agents);
 
     eta = environment.angularNoise;
@@ -19,7 +20,7 @@ function agents = UpdateAgentsAngle(agents,environment)
         agents(j).angle = agents(j).angle + sqrt(2*eta)*timestep*randn;
 
         %Interaction
-        interactingParticles = distanceMatrix(j,:) < (agents(j).radius+agents(j).interactionRadius);
+        interactingParticles = distanceMatrix(j,:) < agents(j).interactionRadius;
         for k = agentIndex(and(agentIndex~=j,interactingParticles))
             if agents(j).type == "Fisherman"
                 if agents(k).type == "Big Fish"
