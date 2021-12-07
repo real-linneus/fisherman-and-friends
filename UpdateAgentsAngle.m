@@ -24,7 +24,11 @@ function agents = UpdateAgentsAngle(agents,environment)
         for k = agentIndex(and(agentIndex~=j,interactingParticles))
             if agents(j).type == "Fisherman"
                 if agents(k).type == "Big Fish"
-                    agents(j).angle = atan2(agents(k).y-agents(j).y,agents(k).x-agents(j).x);
+                    % agents(j).angle = atan2(agents(k).y-agents(j).y,agents(k).x-agents(j).x);
+                    % Negative delay for Fishermans hunting Big Fish
+                    futureXforK = agents(k).x + environment.delay*agents(k).velocity.*cos(agents(k).angle).*environment.dt;
+                    futureYforK = agents(k).y + environment.delay*agents(k).velocity.*sin(agents(k).angle).*environment.dt;
+                    agents(j).angle = atan2(futureYforK-agents(j).y,futureXforK-agents(j).x);
                     break;
                 end
             elseif agents(j).type == "Big Fish"
@@ -37,7 +41,11 @@ function agents = UpdateAgentsAngle(agents,environment)
                     agents(j).angle = atan2(agents(j).y-agents(k).y,agents(j).x-agents(k).x);
                     continue;
                 elseif agents(k).type == "Small Fish"
-                    agents(j).angle = atan2(agents(k).y-agents(j).y,agents(k).x-agents(j).x);
+                    % agents(j).angle = atan2(agents(k).y-agents(j).y,agents(k).x-agents(j).x);
+                    % Negative delay for Big Fish hunting Small Fish
+                    futureXforK = agents(k).x + environment.delay*agents(k).velocity.*cos(agents(k).angle).*environment.dt;
+                    futureYforK = agents(k).y + environment.delay*agents(k).velocity.*sin(agents(k).angle).*environment.dt;
+                    agents(j).angle = atan2(futureYforK-agents(j).y,futureXforK-agents(j).x);
                 end
             elseif agents(j).type == "Small Fish"
                 if agents(k).type == "Big Fish"
