@@ -2,10 +2,12 @@
 % evironment that they "live" in.
 
 environment = struct;
+
 environment.lakeSize = 10;
 environment.t = 0;
 environment.dt = 0.05;
 environment.angularNoise = 2;
+environment.delay = 10;
 
 agents = struct;
 
