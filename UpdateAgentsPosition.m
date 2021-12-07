@@ -13,9 +13,4 @@ function agents = UpdateAgentsPosition(agents,environment)
         end
     end
     
-%     agents([agents.x]<-environment.lakeSize/2).x = -environment.lakeSize/2;
-%     agents([agents.x]>environment.lakeSize/2).x = environment.lakeSize/2;
-%     agents([agents.y]<-environment.lakeSize/2).y = -environment.lakeSize/2;
-%     agents([agents.y]>environment.lakeSize/2).y = environment.lakeSize/2;
-    
 end
