@@ -13,3 +13,4 @@ for i = environment.scatter(contains({environment.scatter.DisplayName},"Fisherma
 end
 environment.quiver = quiver([agents.x],[agents.y],[agents.velocity].*cos([agents.angle]),[agents.velocity].*sin([agents.angle]),'r','LineWidth',1,'AutoScale','off');
 legend(environment.scatter,'Location','EastOutside')
+caxis([0,1])
