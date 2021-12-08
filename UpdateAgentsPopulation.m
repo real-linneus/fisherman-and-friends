@@ -25,7 +25,7 @@ function [agents,environment] = UpdateAgentsPopulation(agents,environment)
                 end
             elseif agents(j).type == "Big Fish"
                 if agents(k).type == "Small Fish" 
-                    agents(j).population = agents(j).population + fishPerCatch;
+                    agents(j).population = round(agents(j).population + fishPerCatch*0.3);
                     agents(k).population = agents(k).population - fishPerCatch;
                     fprintf("%s's population reduced to %d \n",agents(k).name,agents(k).population)
                     fprintf("%s's population increased to %d \n",agents(j).name,agents(j).population)
