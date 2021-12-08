@@ -13,6 +13,7 @@ agents = struct;
 
 agents(1).name = "Fisherman 1";
 agents(1).type = "Fisherman";
+agents(1).maxFishPopulation = 1000;
 agents(1).x = 3;
 agents(1).y = 3;
 agents(1).angle = -2*pi/3;
@@ -27,6 +28,7 @@ agents(1).plotColor = 1;
 
 agents(2).name = "Fisherman 2";
 agents(2).type = "Fisherman";
+agents(2).maxFishPopulation = 1000;
 agents(2).x = 4;
 agents(2).y = -4;
 agents(2).angle = -2*pi/3;
@@ -81,7 +83,7 @@ agents(5).minVel = 0.5;
 agents(5).maxVel = 3;
 agents(5).timestepsSinceHunted = inf;
 agents(5).population = 5000;
-agents(5).interactionRadius = -0.2;
+agents(5).interactionRadius = -0.3;
 agents(5).radius = sqrt(agents(5).population/agents(5).maxFishPopulation/2);
 agents(5).plotColor = 0.6;
 
@@ -96,7 +98,7 @@ agents(6).minVel = 0.5;
 agents(6).maxVel = 3;
 agents(6).timestepsSinceHunted = inf;
 agents(6).population = 5000;
-agents(6).interactionRadius = -0.2;
+agents(6).interactionRadius = -0.3;
 agents(6).radius = sqrt(agents(6).population/agents(6).maxFishPopulation/2);
 agents(6).plotColor = 0.6;
 

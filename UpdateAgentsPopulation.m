@@ -62,6 +62,10 @@ function [agents,environment] = UpdateAgentsPopulation(agents,environment)
         if agents(j).type ~= "Fisherman"
             agents(j).radius = sqrt(agents(j).population/agents(j).maxFishPopulation);
         end
+
+        if agents(j).type == "Fisherman" && abs(agents(j).x) < 1 && agents(j).y < -4
+            agents(j).population = 1;
+        end
     end
     if any([agents.population]<=0)
         delete(environment.scatter([agents.population]<=0));

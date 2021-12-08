@@ -73,6 +73,9 @@ function agents = UpdateAgentsAngle(agents,environment)
 %             end
         end
         
+        if agents(j).type == 'Fisherman' && agents(j).population > agents(j).maxFishPopulation
+            agents(j).angle = atan2(-5-agents(j).y,-agents(j).x);
+        end
     end
     
 end

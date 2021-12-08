@@ -1,4 +1,5 @@
 figure(2)
+clf
 hold on
 plot(populations(1,:),'-.r')
 plot(populations(2,:),'-b')
