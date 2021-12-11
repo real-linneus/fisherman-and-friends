@@ -16,7 +16,7 @@ for i = 1:timesteps
     agents = UpdateAgentsAngle(agents,environment);
     agents = UpdateAgentsVelocity(agents);
     RegisterPopulation;
-    %UpdateFigure;
+%     UpdateFigure;
 end
 %UpdateFigure
 PopulationFigure;
