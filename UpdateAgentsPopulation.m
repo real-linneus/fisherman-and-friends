@@ -8,12 +8,12 @@ function [agents,environment] = UpdateAgentsPopulation(agents,environment)
 
 %         fishPerCatch = ceil(100*rand);
         fishFirmPerCatch = 2;
-        fishPercentagePerCatch = 0.01;
+        fishPercentagePerCatch = 0.005;
         minFishPopulation = 500;
         maxFishPopulation = agents(j).maxFishPopulation;
         catchRadius = 0.2;
         % growthRate = 1.0001;
-        growthRate = 1.0008;
+        growthRate = 1.0005;
         fishermanStorage = 4000;
         
         %Interaction
@@ -32,7 +32,7 @@ function [agents,environment] = UpdateAgentsPopulation(agents,environment)
                 if agents(k).type == "Small Fish" 
 %                     agents(j).population = round(agents(j).population + fishPerCatch*0.3);
 %                     agents(k).population = agents(k).population - fishPerCatch;
-                    agents(j).population = round(agents(j).population+(agents(k).population*fishPercentagePerCatch+fishFirmPerCatch)*0.2);
+                    agents(j).population = round(agents(j).population+(agents(k).population*fishPercentagePerCatch+fishFirmPerCatch)*0.25);
                     agents(k).population = round(agents(k).population*(1-fishPercentagePerCatch)-fishFirmPerCatch);
 %                     fprintf("%s's population reduced to %d \n",agents(k).name,agents(k).population)
 %                     fprintf("%s's population increased to %d \n",agents(j).name,agents(j).population)

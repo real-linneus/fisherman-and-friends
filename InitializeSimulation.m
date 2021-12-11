@@ -9,7 +9,7 @@ environment.dt = 0.05;
 environment.angularNoise = 2;
 environment.delay = 10;
 
-numberOfFihsermen = 4;
+numberOfFihsermen = 3;
 numberOfBigFish = 5;
 numberOfSmallFish = 10;
 
@@ -82,7 +82,7 @@ for i = 1:numberOfSmallFish
     agents(newAgentIndex).minVel = 0.5;
     agents(newAgentIndex).maxVel = 4;
     agents(newAgentIndex).timestepsSinceHunted = inf;
-    agents(newAgentIndex).population = 3500;
+    agents(newAgentIndex).population = 3000;
     agents(newAgentIndex).interactionRadius = -0.4;
     agents(newAgentIndex).radius = sqrt(agents(newAgentIndex).population/agents(newAgentIndex).maxFishPopulation);
     agents(newAgentIndex).plotColor = 0.2;
