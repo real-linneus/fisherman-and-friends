@@ -8,7 +8,7 @@ function [agents,environment] = UpdateAgentsPopulation(agents,environment)
 
 %         fishPerCatch = ceil(100*rand);
         fishFirmPerCatch = 2;
-        fishPercentagePerCatch = 0.005;
+        fishPercentagePerCatch = 0.01;
         minFishPopulation = 500;
         maxFishPopulation = agents(j).maxFishPopulation;
         catchRadius = 0.2;
