@@ -35,7 +35,9 @@ for j = 1:nrOfSimulations
     averageCatch = averageCatch + fishCatch;
     %UpdateFigure
     PopulationFigure;
+    CatchFigure
 end
 averagePopulations = averagePopulations./nrOfSimulations;
 averageCatch = averageCatch./nrOfSimulations;
-AvaragePopulationFigure;
+AveragePopulationFigure;
+AverageCatchFigure;
