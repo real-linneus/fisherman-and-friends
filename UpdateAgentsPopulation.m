@@ -1,9 +1,11 @@
-function [agents,environment] = UpdateAgentsPopulation(agents,environment)
+function [agents,environment,catchPerDt] = UpdateAgentsPopulation(agents,environment)
     
     radiusMatrix = meshgrid([agents.radius])+meshgrid([agents.radius])';
     distanceMatrix = squareform(pdist([[agents.x]',[agents.y]'])) - radiusMatrix;
     agentIndex = 1:length(agents);
-
+    
+    catchPerDt = 0;
+    
     for j = agentIndex
 
 %         fishPerCatch = ceil(100*rand);
@@ -25,6 +27,8 @@ function [agents,environment] = UpdateAgentsPopulation(agents,environment)
 %                     agents(k).population = agents(k).population - fishPerCatch;
                     agents(j).population = round(agents(j).population+agents(k).population*fishPercentagePerCatch+fishFirmPerCatch);
                     agents(k).population = round(agents(k).population*(1-fishPercentagePerCatch)-fishFirmPerCatch);
+% % % % %                     UpdateCatchPerDt;
+                    catchPerDt = catchPerDt + round(agents(k).population*fishPercentagePerCatch+fishFirmPerCatch);
 %                     fprintf("%s's population reduced to %d \n",agents(k).name,agents(k).population)
 %                     fprintf("%s's population increased to %d \n",agents(j).name,agents(j).population)
                 end
@@ -82,4 +86,7 @@ function [agents,environment] = UpdateAgentsPopulation(agents,environment)
         environment.scatter = environment.scatter([agents.population]>0);
         agents = agents([agents.population]>0);
     end
+    
+% % % % %     UpdateTotalCatch;
+    
 end
