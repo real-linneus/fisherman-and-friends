@@ -1,13 +1,14 @@
-figure(6)
-clf
-hold on
-plot(averageCatch(1,:),'.r')
-plot(averageCatch(3,:),'-b','Linewidth',2)
-legend('Average catch per dt','Average total catch / #dt')
-title('Average catch')
-
 figure(7)
 clf
-hold on
+plot(averageCatch(1,:),'.r')
+title('Average catch per dt')
+
+figure(8)
+clf
+plot(averageCatch(3,:),'-b','Linewidth',2)
+title('Average total catch / #dt')
+
+figure(9)
+clf
 plot(averageCatch(2,:),'-b')
 title('Average total catch')

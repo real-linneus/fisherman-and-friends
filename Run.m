@@ -2,7 +2,7 @@
 clear all; close all; clc;
 % set(0,'defaultFigureWindowStyle','docked')
 
-timesteps = 40000;
+timesteps = 100000;
 nrOfSimulations = 1;
 
 averagePopulations = zeros([3 timesteps]);

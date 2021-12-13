@@ -1,13 +1,14 @@
 figure(4)
 clf
-hold on
 plot(fishCatch(1,:),'.r')
-plot(fishCatch(3,:),'-b','Linewidth',2)
-legend('Catch per dt','Total catch / #dt')
-title('Catch')
+title('Catch per dt')
 
 figure(5)
 clf
-hold on
+plot(fishCatch(3,:),'-b','Linewidth',2)
+title('Total catch / #dt')
+
+figure(6)
+clf
 plot(fishCatch(2,:),'-b')
 title('Total catch')
