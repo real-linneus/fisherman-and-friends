@@ -9,7 +9,7 @@ environment.dt = 0.05;
 environment.angularNoise = 2;
 environment.delay = 10;
 
-numberOfFihsermen = 3;
+numberOfFihsermen = 2;
 numberOfBigFish = 5;
 numberOfSmallFish = 10;
 

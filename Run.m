@@ -2,14 +2,14 @@
 clear all; close all; clc;
 % set(0,'defaultFigureWindowStyle','docked')
 
-timesteps = 10000;
-nrOfSimulations = 10;
-InitializeFigure;
+timesteps = 40000;
+nrOfSimulations = 1;
 
 averagePopulations = zeros([3 timesteps]);
 averageCatch = zeros([3 timesteps]); % [(per dt),(total so far),(total so far / #dt)]
 for j = 1:nrOfSimulations
     InitializeSimulation;
+    InitializeFigure;
     populations = zeros([3 timesteps]);
     fishCatch = zeros([3 timesteps]); % [(per dt),(total so far),(total so far / #dt)]
     for i = 1:timesteps
