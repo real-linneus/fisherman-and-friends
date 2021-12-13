@@ -10,5 +10,4 @@ figure(7)
 clf
 hold on
 plot(averageCatch(2,:),'-b')
-legend('Average catch per dt')
-title('Average catch per dt')
+title('Average total catch')
