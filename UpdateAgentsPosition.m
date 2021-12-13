@@ -2,6 +2,7 @@ function agents = UpdateAgentsPosition(agents,environment)
     
     half = environment.lakeSize/2;
     for j = 1:length(agents)
+        
         agents(j).x = agents(j).x + agents(j).velocity.*cos(agents(j).angle).*environment.dt;
         agents(j).y = agents(j).y + agents(j).velocity.*sin(agents(j).angle).*environment.dt;
         
