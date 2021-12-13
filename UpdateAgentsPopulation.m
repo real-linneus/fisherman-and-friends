@@ -38,7 +38,7 @@ function [agents,environment,catchPerDt] = UpdateAgentsPopulation(agents,environ
 %                     agents(j).population = round(agents(j).population+(agents(k).population*fishPercentagePerCatch+fishFirmPerCatch)*0.25);
 %                     agents(k).population = round(agents(k).population*(1-fishPercentagePerCatch)-fishFirmPerCatch);
                     
-                    testParameter = 7;
+                    testParameter = 10;
                     kills = round(min(agents(k).population,testParameter*agents(j).population)*fishPercentagePerCatch+fishFirmPerCatch);
                     agents(j).population = round(agents(j).population+round(kills*0.25));
                     agents(k).population = round(agents(k).population-kills);
