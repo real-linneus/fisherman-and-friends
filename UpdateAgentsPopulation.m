@@ -27,7 +27,6 @@ function [agents,environment,catchPerDt] = UpdateAgentsPopulation(agents,environ
 %                     agents(k).population = agents(k).population - fishPerCatch;
                     agents(j).population = round(agents(j).population+agents(k).population*fishPercentagePerCatch+fishFirmPerCatch);
                     agents(k).population = round(agents(k).population*(1-fishPercentagePerCatch)-fishFirmPerCatch);
-% % % % %                     UpdateCatchPerDt;
                     catchPerDt = catchPerDt + round(agents(k).population*fishPercentagePerCatch+fishFirmPerCatch);
 %                     fprintf("%s's population reduced to %d \n",agents(k).name,agents(k).population)
 %                     fprintf("%s's population increased to %d \n",agents(j).name,agents(j).population)
@@ -86,7 +85,5 @@ function [agents,environment,catchPerDt] = UpdateAgentsPopulation(agents,environ
         environment.scatter = environment.scatter([agents.population]>0);
         agents = agents([agents.population]>0);
     end
-    
-% % % % %     UpdateTotalCatch;
     
 end
