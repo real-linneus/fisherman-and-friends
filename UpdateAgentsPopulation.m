@@ -81,8 +81,9 @@ function [agents,environment,catchPerDt] = UpdateAgentsPopulation(agents,environ
             agents(j).radius = sqrt(agents(j).population/agents(j).maxFishPopulation);
         end
 
-        if agents(j).type == "Fisherman" && abs(agents(j).x) < 1 && agents(j).y < -4
+        if agents(j).type == "Fisherman" && abs(agents(j).x) < 1 && agents(j).y < -4 && agents(j).population > 1
             agents(j).population = 1;
+            agents(j).harborTimeout = 200;
         end
     end
     if any([agents.population]<=0)

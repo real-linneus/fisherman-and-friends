@@ -2,6 +2,12 @@ function agents = UpdateAgentsPosition(agents,environment)
     
     half = environment.lakeSize/2;
     for j = 1:length(agents)
+
+        if agents(j).type == "Fisherman" && agents(j).harborTimeout > 0
+            agents(j).harborTimeout = agents(j).harborTimeout - 1;
+            continue
+        end
+
         agents(j).x = agents(j).x + agents(j).velocity.*cos(agents(j).angle).*environment.dt;
         agents(j).y = agents(j).y + agents(j).velocity.*sin(agents(j).angle).*environment.dt;
         
