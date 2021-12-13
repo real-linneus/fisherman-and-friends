@@ -31,6 +31,7 @@ agents(1).population = 1;
 agents(1).interactionRadius = 1;
 agents(1).radius = 0.2;
 agents(1).plotColor = 1;
+agents(1).harborTimeout = 0;
 
 for i = 2:numberOfFihsermen
     newAgentIndex = length(agents)+1;
@@ -50,6 +51,7 @@ for i = 2:numberOfFihsermen
     agents(newAgentIndex).interactionRadius = 1;
     agents(newAgentIndex).radius = 0.2;
     agents(newAgentIndex).plotColor = 1;
+    agents(newAgentIndex).harborTimeout = 0;
 end
 
 for i = 1:numberOfBigFish
@@ -68,6 +70,7 @@ for i = 1:numberOfBigFish
     agents(newAgentIndex).interactionRadius = -0.2;
     agents(newAgentIndex).radius = sqrt(agents(newAgentIndex).population/agents(newAgentIndex).maxFishPopulation);
     agents(newAgentIndex).plotColor = 0.6;
+    agents(newAgentIndex).harborTimeout = 0;
 end
 
 for i = 1:numberOfSmallFish
@@ -86,4 +89,5 @@ for i = 1:numberOfSmallFish
     agents(newAgentIndex).interactionRadius = -0.4;
     agents(newAgentIndex).radius = sqrt(agents(newAgentIndex).population/agents(newAgentIndex).maxFishPopulation);
     agents(newAgentIndex).plotColor = 0.2;
+    agents(newAgentIndex).harborTimeout = 0;
 end
