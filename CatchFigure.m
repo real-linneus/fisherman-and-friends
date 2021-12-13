@@ -10,5 +10,4 @@ figure(5)
 clf
 hold on
 plot(fishCatch(2,:),'-b')
-legend('Catch per dt')
-title('Catch per dt')
+title('Total catch')
