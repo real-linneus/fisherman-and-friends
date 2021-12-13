@@ -2,7 +2,7 @@
 clear all; close all; clc;
 % set(0,'defaultFigureWindowStyle','docked')
 
-timesteps = 1000;
+timesteps = 10000;
 InitializeSimulation;
 InitializeFigure;
 
@@ -16,7 +16,7 @@ for i = 1:timesteps
     agents = UpdateAgentsAngle(agents,environment);
     agents = UpdateAgentsVelocity(agents);
     RegisterPopulation;
-    UpdateFigure;
+%     UpdateFigure;
 end
 UpdateFigure
 PopulationFigure;
