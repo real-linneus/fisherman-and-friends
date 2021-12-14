@@ -2,9 +2,9 @@
 clear all; close all; clc;
 % set(0,'defaultFigureWindowStyle','docked')
 
-timesteps = 400000;
+timesteps = 100000;
 nrOfSimulations = 1;
-fishingTimeout = 200; %which frequens (in steps of 1000) to paus fishing
+fishingTimeout = 300; %which frequens (in steps of 1000) to paus fishing
 
 averagePopulations = zeros([3 timesteps]);
 averageCatch = zeros([3 timesteps]); % [(per dt),(total so far),(total so far / #dt)]
@@ -17,7 +17,10 @@ for j = 1:nrOfSimulations
         %fprintf("%g\n",i)
         %pause(0.05)
         agents = UpdateAgentsPosition(agents,environment);
-        [agents,environment,catchPerDt] = UpdateAgentsPopulation(agents,environment);
+        catchPerDt = 0;
+        if i > 5000
+             [agents,environment,catchPerDt] = UpdateAgentsPopulation(agents,environment);
+        end
         fishCatch(1,i) = catchPerDt;
         agents = UpdateAgentsAngle(agents,environment,i,fishingTimeout);
         agents = UpdateAgentsVelocity(agents);
@@ -40,5 +43,5 @@ for j = 1:nrOfSimulations
 end
 averagePopulations = averagePopulations./nrOfSimulations;
 averageCatch = averageCatch./nrOfSimulations;
-AveragePopulationFigure;
-AverageCatchFigure;
+% AveragePopulationFigure;
+% AverageCatchFigure;

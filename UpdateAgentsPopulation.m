@@ -9,14 +9,13 @@ function [agents,environment,catchPerDt] = UpdateAgentsPopulation(agents,environ
     for j = agentIndex
 
 %         fishPerCatch = ceil(100*rand);
-        fishFirmPerCatch = 2;
+        fishFirmPerCatch = 1;
         fishPercentagePerCatch = 0.01;
-        minFishPopulation = 500;
+%         minFishPopulation = 500;
         maxFishPopulation = agents(j).maxFishPopulation;
-        catchRadius = 0.2;
+%         catchRadius = 0.2;
         % growthRate = 1.0001;
         growthRate = 1.0005;
-        fishermanStorage = 4000;
         
         %Interaction
         interactingParticles = distanceMatrix(j,:) < 0;%agents(j).interactionRadius;
@@ -40,7 +39,7 @@ function [agents,environment,catchPerDt] = UpdateAgentsPopulation(agents,environ
                     
                     testParameter = 10;
                     kills = round(min(agents(k).population,testParameter*agents(j).population)*fishPercentagePerCatch+fishFirmPerCatch);
-                    agents(j).population = agents(j).population+round(kills*0.3);
+                    agents(j).population = agents(j).population+round(kills*0.15);
                     agents(k).population = agents(k).population-kills;
 %                     fprintf("%s's population reduced to %d \n",agents(k).name,agents(k).population)
 %                     fprintf("%s's population increased to %d \n",agents(j).name,agents(j).population)
