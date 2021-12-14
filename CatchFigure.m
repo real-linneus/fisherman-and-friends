@@ -7,10 +7,10 @@ ylabel('Catch per iteration')
 
 figure(5)
 clf
-plot(fishCatch(3,:),'-b','Linewidth',2)
+plot(movmean(fishCatch(1,:),[5000 0]),'-b')
 % title('Total catch / #dt')
 xlabel('Iterations')
-ylabel('Accumulated catch / iteration number')
+ylabel('Moving average catch per iteration')
 
 figure(6)
 clf

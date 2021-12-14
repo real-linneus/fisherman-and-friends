@@ -7,10 +7,10 @@ ylabel('Average atch per iteration')
 
 figure(8)
 clf
-plot(averageCatch(3,:),'-b','Linewidth',2)
-% title('Average total catch / #dt')
+plot(movmean(averageCatch(1,:),[5000 0]),'-b')
+% title('Total catch / #dt')
 xlabel('Iterations')
-ylabel('Average accumulated catch / iteration number')
+ylabel('Average moving average catch per iteration')
 
 figure(9)
 clf
