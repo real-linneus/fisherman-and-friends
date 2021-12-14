@@ -4,6 +4,7 @@ clear all; close all; clc;
 
 timesteps = 200000;
 nrOfSimulations = 1;
+fishingTimeout = 10; %which frequens (in steps of 1000) to paus fishing
 
 averagePopulations = zeros([3 timesteps]);
 averageCatch = zeros([3 timesteps]); % [(per dt),(total so far),(total so far / #dt)]
@@ -18,7 +19,7 @@ for j = 1:nrOfSimulations
         agents = UpdateAgentsPosition(agents,environment);
         [agents,environment,catchPerDt] = UpdateAgentsPopulation(agents,environment);
         fishCatch(1,i) = catchPerDt;
-        agents = UpdateAgentsAngle(agents,environment);
+        agents = UpdateAgentsAngle(agents,environment,i,fishingTimeout);
         agents = UpdateAgentsVelocity(agents);
         RegisterPopulation;
 %         UpdateFigure;

@@ -2,7 +2,7 @@ function agents = UpdateAgentsPosition(agents,environment)
     
     half = environment.lakeSize/2;
     for j = 1:length(agents)
-
+        
         if agents(j).type == "Fisherman" && agents(j).harborTimeout > 0
             agents(j).harborTimeout = agents(j).harborTimeout - 1;
             continue

@@ -1,4 +1,4 @@
-function agents = UpdateAgentsAngle(agents,environment)
+function agents = UpdateAgentsAngle(agents,environment,i,fishingTimeout)
     
     radiusMatrix = meshgrid([agents.radius])+meshgrid([agents.radius])';
     distanceMatrix = squareform(pdist([[agents.x]',[agents.y]'])) - radiusMatrix;
@@ -73,9 +73,15 @@ function agents = UpdateAgentsAngle(agents,environment)
 %             end
         end
         
-        if agents(j).type == 'Fisherman' && agents(j).population > agents(j).maxFishPopulation
-            agents(j).angle = atan2(-5-agents(j).y,-agents(j).x);
+%         if agents(j).type == 'Fisherman' && agents(j).population > agents(j).maxFishPopulation
+%             agents(j).angle = atan2(-5-agents(j).y,-agents(j).x);
+%         end
+        if agents(j).type == 'Fisherman' 
+            if mod(ceil(i/1000), fishingTimeout) == 0 || agents(j).population > agents(j).maxFishPopulation
+                agents(j).angle = atan2(-5-agents(j).y,-agents(j).x);
+            end
         end
+        
     end
     
 end
