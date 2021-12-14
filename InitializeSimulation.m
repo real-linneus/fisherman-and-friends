@@ -10,8 +10,8 @@ environment.angularNoise = 2;
 environment.delay = 10;
 
 numberOfFihsermen = 2;
-numberOfBigFish = 5;
-numberOfSmallFish = 10;
+numberOfBigFish = 4;
+numberOfSmallFish = 8;
 
 agents = struct;
 
@@ -69,7 +69,8 @@ for i = 1:numberOfBigFish
     agents(newAgentIndex).population = 1000;
     agents(newAgentIndex).interactionRadius = -0.2;
     agents(newAgentIndex).radius = sqrt(agents(newAgentIndex).population/agents(newAgentIndex).maxFishPopulation);
-    agents(newAgentIndex).plotColor = 0.6;
+%     agents(newAgentIndex).plotColor = 0.6;
+    agents(newAgentIndex).plotColor = 0.2;
     agents(newAgentIndex).harborTimeout = 0;
 end
 
@@ -88,6 +89,7 @@ for i = 1:numberOfSmallFish
     agents(newAgentIndex).population = 3000;
     agents(newAgentIndex).interactionRadius = -0.4;
     agents(newAgentIndex).radius = sqrt(agents(newAgentIndex).population/agents(newAgentIndex).maxFishPopulation);
-    agents(newAgentIndex).plotColor = 0.2;
+%     agents(newAgentIndex).plotColor = 0.2;
+    agents(newAgentIndex).plotColor = 0.6;
     agents(newAgentIndex).harborTimeout = 0;
 end

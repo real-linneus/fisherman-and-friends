@@ -4,7 +4,7 @@ clear all; close all; clc;
 
 timesteps = 100000;
 nrOfSimulations = 1;
-fishingTimeout = 10; %which frequens (in steps of 1000) to paus fishing
+fishingTimeout = 200; %which frequens (in steps of 1000) to paus fishing
 
 averagePopulations = zeros([3 timesteps]);
 averageCatch = zeros([3 timesteps]); % [(per dt),(total so far),(total so far / #dt)]
