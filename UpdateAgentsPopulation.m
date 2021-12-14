@@ -83,7 +83,7 @@ function [agents,environment,catchPerDt] = UpdateAgentsPopulation(agents,environ
 
         if agents(j).type == "Fisherman" && abs(agents(j).x) < 1 && agents(j).y < -4 && agents(j).population > 1
             agents(j).population = 1;
-            agents(j).harborTimeout = 200;
+            agents(j).harborTimeout = 0;
         end
     end
     if any([agents.population]<=0)

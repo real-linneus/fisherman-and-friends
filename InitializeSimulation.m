@@ -11,13 +11,13 @@ environment.delay = 10;
 
 numberOfFihsermen = 2;
 numberOfBigFish = 5;
-numberOfSmallFish = 10;
+numberOfSmallFish = 8;
 
 agents = struct;
 
 agents(1).name = "Fisherman 1";
 agents(1).type = "Fisherman";
-agents(1).maxFishPopulation = 500;
+agents(1).maxFishPopulation = 50;
 % agents(1).x = 0;
 % agents(1).y = -environment.lakeSize/2;
 agents(1).x = (rand-0.5)*environment.lakeSize;
@@ -37,7 +37,7 @@ for i = 2:numberOfFihsermen
     newAgentIndex = length(agents)+1;
     agents(newAgentIndex).name = "Fisherman " + num2str(i);
     agents(newAgentIndex).type = "Fisherman";
-    agents(newAgentIndex).maxFishPopulation = 500;
+    agents(newAgentIndex).maxFishPopulation = 50;
 %     agents(newAgentIndex).x = 0;
 %     agents(newAgentIndex).y = -environment.lakeSize/2;
     agents(newAgentIndex).x = (rand-0.5)*environment.lakeSize;
@@ -77,7 +77,7 @@ for i = 1:numberOfSmallFish
     newAgentIndex = length(agents)+1;
     agents(newAgentIndex).name = "Small Fish " + num2str(i);
     agents(newAgentIndex).type = "Small Fish";
-    agents(newAgentIndex).maxFishPopulation = 5000;
+    agents(newAgentIndex).maxFishPopulation = 8000;
     agents(newAgentIndex).x = (rand-0.5)*environment.lakeSize;
     agents(newAgentIndex).y = (rand-0.5)*environment.lakeSize;
     agents(newAgentIndex).angle = 0;

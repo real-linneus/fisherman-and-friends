@@ -2,7 +2,7 @@
 clear all; close all; clc;
 % set(0,'defaultFigureWindowStyle','docked')
 
-timesteps = 200000;
+timesteps = 400000;
 nrOfSimulations = 1;
 fishingTimeout = 10; %which frequens (in steps of 1000) to paus fishing
 
