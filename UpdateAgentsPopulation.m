@@ -22,7 +22,7 @@ function [agents,environment,catchPerDt] = UpdateAgentsPopulation(agents,environ
         interactingParticles = distanceMatrix(j,:) < 0;%agents(j).interactionRadius;
         for k = agentIndex(and(agentIndex~=j,interactingParticles))
             if agents(j).type == "Fisherman"
-                if agents(k).type == "Big Fish" 
+                if agents(k).type == "Big Fish" && agents(j).population < agents(j).maxFishPopulation
 %                     agents(j).population = agents(j).population + fishPerCatch;
 %                     agents(k).population = agents(k).population - fishPerCatch;
                     agents(j).population = round(agents(j).population+agents(k).population*fishPercentagePerCatch+fishFirmPerCatch);
